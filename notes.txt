@@ -15,7 +15,7 @@ There are 32 Keywords in Python - reserved words
 
 Identifier - names given by user/programmer
 Rules for indentifier - 
-1. can start with a digit
+1. can't start with a digit
 2. can start with upper/lower case
 3. only UNDERSCORE can be used in special character
 4. cannot be keywords
