@@ -1,3 +1,4 @@
+
 python created in 1989
 
 1. python design philosophy - readable, easy, 
