@@ -26,7 +26,8 @@ print(a.real, a.imag , sep = "\n")
 print()
 string1 = "hello"
 string2 = 'world'
-string3 = """ ** Hello                                          World"""
+string3 = """ ** Hello                         
+World"""
 print(string1, string2,string3, sep="\t")
 
 raw_str = r"raw \n string" # Raw String - start using r" " - considers everything within " "
@@ -41,3 +42,8 @@ a = True + 4 # True = 1
 b = False - 10 # False = 0
 print()
 print(a, b, sep="\n")
+
+
+#special literal
+a = None
+print(a)

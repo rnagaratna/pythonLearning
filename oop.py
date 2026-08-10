@@ -159,7 +159,7 @@ class Point:
     def distanceFromOrigin(self):
         dummy = Point(0,0) # creating class object inside a class
         return self.euclidianDistance(dummy)
-        # return self.euclidianDistance(self, Point(0,0))
+        # return self.euclidianDistance(self, Point(0,0)) #throws error due to 3 argument s
 
     def pointOnLine(point, line): #self = point, other = line
         if (line.a*point.xCord) + (line.b*point.yCord) + line.c == 0 :
@@ -268,7 +268,7 @@ p = Person() # creating an object of Person
 print(Person()) # no variable
 # p is the reference of the object. p is not the object. It contains the reference of the object that has been created
 
-q = p # both point to the same object
+q = p # both point to the same object  # syntax of aliasing
 # any editing on any object, changes the data within both object
 print(id(p))
 print(id(q))
@@ -323,3 +323,23 @@ p = Person('tejas','male')
 print(id(p))
 greet(p)
 print(p.name) # p.name is changed because of greet function
+
+
+
+
+####################### Mutability of object #####################
+# User defined objects are mutable 
+
+class Person:
+    def __init__(self,name,gender):
+        self.name = name
+        self.gender = gender
+
+def greet(person):
+    person.name = 'ankit'
+    return person
+
+p = Person('tejas','male')
+print(id(p))
+p1 = greet(p)
+print(id(p1))

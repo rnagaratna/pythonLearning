@@ -5,7 +5,7 @@
 
 # it is a consise way of creating list
 # newlist = [expression for items in iterable if condition = True]
-# more efficient and powerfull, requires fewer number of lines, interative statements into formulas
+# more efficient and powerfull, requires fewer number of lines, transforms iterative statements into formulas
 
 
 # add 1 to 10 number in the list
@@ -52,7 +52,7 @@ print(result)
 
 ### Nested ifs with list comprehension
 
-# make new list from myfruit if it item is present in basket and also starts with 'a'
+# make new list from myfruit if item is present in basket and also starts with 'a'
 basket = ['apple','cherry','almond','guava','banana']
 myfruits = ['apple','kivi','grapes','banana','almond']
 # print([fruit for fruit in myfruits if fruit in basket and fruit.startswith('a')])

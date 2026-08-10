@@ -1,5 +1,17 @@
 # sets and set theory
 
+# Set is an unordered collection of items. 
+# Everyset element is unique and must be immutable.
+# However sets are mutable
+
+# Characteristics
+# 1. unordered
+# 2. mutable
+# 3. no Duplicates
+# 4. can't contain mutable datatypes
+# 5. sets are mutable 
+
+
 ### Creating sets
 
 s = {} # this doesn't create set, this creates a dictoinary
@@ -20,8 +32,8 @@ print(s) # output = {1, 2.3, 'hello'}, since sets doesn't allow duplicates and t
 s = {1,2.3,'okay',(4,5.6)} # tuple is immutable and it can be element
 print(s)
 
-s = set([1,2,3])
-print(s)
+s = set([1,2,3]) # this creates a set with element {1,2,3}
+print(s) 
 s = set((1,2,3))
 print(s)
 
@@ -31,13 +43,14 @@ print(s1 == s2) # True - because tuple is unordered
 
 
 
-### Accessing the elements - elements cant be accessed by indexing or slicing
+### Accessing the elements - elements can't be accessed by indexing or slicing
 
 
-### Editing the items - not allowed
+### Editing the items - not allowed - Indexing doesn't work hence editing also won't work
 
 
 ### Adding/Updating items into set
+# update adds multiple elements to sets whereas add adds only one element to a set
 s = {1,2,3,4}
 s.add(5) # Position of the addition can't be controlled
 print(s)
@@ -62,7 +75,7 @@ del s
 s = {1,2,3,4,5}
 s.discard(5) # discards the particular element
 print(s)
-s.discard(10) # doesn't throw error
+s.discard(10) # doesn't throw error even if the element is not present
 
 s = {1,2,3,4,5}
 s.remove(5)
@@ -147,7 +160,7 @@ symmetric_difference and symmetric_difference_update
 
 # isdisjoint / issubset / issuperset
 s1 = {1,2,3,4,5}
-s2 = {4,5,6,7}
+s2 = {4,5,6,7,8}
 print(s1.isdisjoint(s2)) # False
 
 s1 = {1,2,3,4,5}
@@ -174,8 +187,9 @@ fs2 = frozenset((1,2,3))
 fs3 = frozenset({1,2,3})
 print(fs1, fs2, fs3, sep="\n")
 
-# union, intersection, diff, symmetric diff - all works with frozenset
-# add and delete functions donot work
+# all read functions work and write functions won't work on frozenset
+# union, intersection, diff, symmetric diff, issubset, isdisjoint, issuperset - all works with frozenset
+# add and delete functions donot work - pop, remove, discard, update, add
 # use frozen set when the application is read only
 
 fs = frozenset([1,2,frozenset[3,4]]) # 2D frozenset

@@ -13,7 +13,7 @@ print(modify(square, 5)) # sending function square as a input to modify function
 
 
 ##### Decorators #####
-
+# Closure - run the below code on python tutor
 def myDec(fun):
     def wrapper():
         print("*******************")

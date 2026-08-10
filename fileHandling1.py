@@ -4,18 +4,18 @@
 file = "fileHandling1/sample1.txt"
 
 
-
-
 f = open(file,'w')
 f.write("Hello World")
 f.close()
+# f.write('hello') # throws error, since file is closed this will not work
 
-# Write multiline strings
-# this erases the previous content of the file and writes the new content
+
+# this erases the previous content of the file and writes the new content - if we try to write on the existing file
 f = open(file,'w')
 f.write("\nhow are you doing??")
 f.close()
 
+# Write multiline strings
 f = open(file,'w')
 f.write("Okay Google\n")
 f.write("how are you doing?\n")
@@ -63,7 +63,7 @@ f.close()
 print("Readlines using loops")
 # reading all lines from the file
 f = open(file, 'r')
-while True:
+while True: 
     data = f.readline()
     if data == "":
         break
@@ -75,7 +75,7 @@ f.close()
 
 
 
-# Using "with" - this closes the file automaticatally
+# Using context manager "with" - this closes the file automaticatally
 
 file = "fileHandling1/sample2.txt"
 with open(file,'w') as f:
@@ -109,7 +109,18 @@ with open(file,'r') as f:
 newFileHandle.close()
 
 
+### 
+bigL = ["hello world\n" for i in range(500)]
+with open(file,'w') as f:
+    f.writelines(bigL)
 
+with open(file,'r') as f:
+    chunkSize = 10
+    while len(f.read(chunkSize)) > 0:
+        print(f.rear(chunkSize),end='***')
+        f.read(chunkSize)
+        
+    
 
 
 

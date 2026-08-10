@@ -24,13 +24,17 @@ d = {
     'p2':p2,
     'p3':p3
 }
+
+for i in d:
+    print(i, d[i], d[i].name, d[i].gender, sep='        ')
+    
 for k,v in d.items():
     print(k,v)
 
 
 
 
-############## STATIC Variables ##############
+############## STATIC Variables and STATIC METHOD ##############
 # assign an id for each customer
 class Atm:
 
@@ -44,6 +48,7 @@ class Atm:
         # self.cid = 0  # these two lines of code actually dont give any unique id
         # self.cid += 1  # all users will have the id 1, because these code runs all the time when an object is created
         # therefore instance variable cannot be used. 
+        # Instance variable - object variable
         # we need static variable i.e class variable
         # static variable value will be same for all object
         # instance variable value will be different for all objects
@@ -150,7 +155,7 @@ print(Atm.getCounter())
 # Aggregation means has a relationship
 # here one class owns the other class
 # eg - customer has a address, here customer class owns address class
-# private variable can't be printed (can be printed with a get)
+# private variable can't be accessed while performing aggregation (can be printed with a get)
 
 class Customer:
 
@@ -160,7 +165,7 @@ class Customer:
         self.address = address
 
     def print_address(self):
-        print(self.address.getCity(), self.address.pin, self.address.state)
+        print(self.address.getCity(), self.address.pin, self.address.state) # self.address.__city -> throws error
 
     def editProfile(self, newName, newCity, newPin, newState):
         self.name = newName

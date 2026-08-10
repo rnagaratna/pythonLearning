@@ -15,7 +15,7 @@ There are 32 Keywords in Python - reserved words
 
 Identifier - names given by user/programmer
 Rules for indentifier - 
-1. can start with a digit
+1. can't start with a digit
 2. can start with upper/lower case
 3. only UNDERSCORE can be used in special character
 4. cannot be keywords
@@ -27,133 +27,6 @@ Declaring a variable in python is done by using None: k = None
 Loop Control Statements - Break, Continue, Pass
 
 python strings are immutable
-
-
-
-########### LISTS ###########
-
-Basics:
-1. It is a datatype to store multiple items under one names
-2. Dynamic datatype
-3. Helps to handle large datas of same type
-
-Differences between Array and Lists:
-1. Fixed versus Dynamic Size, i.e List is Dyanamic Array
-2. Arrays are homogeneous i.e only one data type can be stored, whereas lists are heterogeneous
-3. Speed of execution of List is slow compared to Arrays
-4. Lists occupy more space than Arrays
-
-How lists are stored in memory?
-1. Arrays create continuous memory bloc
-2. Whereas lists are Referential Array, i.e, list stores address of the data - since the address is stored, this removes that only homogenous data has to be stored. But this demands more space and time.
-
-Characteristic of list
-1. Lists are Ordered
-2. Lists are mutable unlike strings
-3. heterogeneous
-4. Items can be dulpicated
-5. Can be nested
-6. Dynamic
-7. Items can be accessed
-8. Can contain any kind of objects in list - functions, user functions, built in function etc
-
-
-
-################# TUPLES ##################
-
-Same as list, except that tuple is immutable whereas as lists are mutable
-Tuple is immutable list
-
-Characteristics
-1. Ordered
-2. Immutable
-3. Allows Duplicates
-
-Tuples are faster than list since it is immutable
-Tuples take less memory then list
-Built in function is more in list
-List is more error prone compared to list
-
-
-
-
-
-
-############ SETS ###############
-
-Set is an unordered collection of items. 
-Everyset element is unique and must be immutable.
-However sets are mutable
-
-Characteristics
-1. unordered
-2. mutable
-3. no Duplicates
-4. can't contain mutable datatypes
-5. sets are mutable
-
-
-
-
-
-
-
-################### DICTIOANRY ####################
-1. collection of key - value pair
-2. also called as maps or associative array in other languages
-
-Characteristics
-1. mutable
-2. indexing has no meaning
-3. key can't be repeated
-4. key can't be mutable datatype
-5. unordered
-
-
-
-
-
-################# FUNCTIONS IN PYTHON ################
-
-Helps in code reusability
-
-2 principles of function:
-1. Abstraction
-2. Decomposition
-
-Components of function:
-1. def keyword
-2. name of function
-3. (input): """docsstring to understand what this function does"""
-4. logic and code
-5. return
-
-def is_even (i) :
-    """
-    what does this code do
-    """
-    code
-    return
-
-is_even(5)
-
-
-i is parameter
-when the value is passed from the main body it is arguement
-that is, 5 is argument, i is parameter
-
-
-How functions are executed in memory??
-Local and global scope
-
-Benefits of functions
-1. code modularity
-2. code readability
-3. code reusability
-
-
-
-
 
 
 
@@ -178,10 +51,16 @@ Benefits of functions
 3. Object is the instance of class
 4. Only the object of the class can access everything of that class
 
+2 types od classes
+1. Built-in - list, tuple, string, dict....
+2. User defined - Atm
+
 Syntax to create an object
 --> objectName = className()
 eg. l = List()
     hello = world()
+
+L = [1,2,3] # object literal
 
 Constructor - It is a function inside the class
 --> def __init__(self): 
@@ -190,6 +69,7 @@ Constructor - It is a function inside the class
 --> this function automatically executes when an object of this class is created. no explicit calling of this function is required
 --> control of the constructor is not with the user. whenever the obj is created it triggers automatically. therefore used for configuration related code when an app is opened  Eg. connect to db, connect to internet
 
+Methods vs Functions
 Functions within a class is called as METHOD
 eg. len(L) is a function because it is "outside" the list class
     L.append(4) is a METHOD because it is "inside" the list class
@@ -239,25 +119,16 @@ def __methodName__
 
 
 
-############################## Inheritance ##############################
-
-1. single : parent <- child (shown as discussed above)
-2. multilevel : grand parent <- parent <- child <- grand child
-3. hirarchical : one parent with multiple children
-4. multiple : multiple parent for a child class
-5. hybrid : mixture of above 4
-
-
-
-
-
-
 
 ########################## File Handling ##########################
 
 ## Types of data for i/o
-1. Text
-2. Binary
+1. Text - '12345' as a sequence of unicode chars
+2. Binary - 12345 as a sequence of bytes of its binary equivalent  
+
+Hence there are 2 file types to deal with
+1. Text files - all program files are text files
+2. Binary files - images, music,video, exe files
 
 # 3 steps with file operation
 1. open
@@ -269,20 +140,29 @@ python picks the file and loads into RAM
 to the buffer memory, where the file is read character by character
 when the file is closed, it is loaded on to harddrive
 
+# why we need perform f.close()
+Memory - When we work with large files, they stay in RAM and use memory until the garbage collector removes them.
+security - if we don't perform f.close(), file will be in ram, so any hackers can access 
 
+# Using context manager (with)
+It's a good idea to close a file after usgae as it will free up the resources
+If we don't close it, garbage collector would close it
+with keyword closes the file as soon as the usgae is over
 
 Disadvantages of using Text Files
 1. Can't work on binary files like images
 2. Not good for other datatypes like int, float, list, tuples. Writing has to be done only with String
 
 
+Pickle Vs Json
+Pickle lets the user to store data in binary format.
+JSON lets the user store data in human readable text format.
 
 
 
 
 
-
-###########################################################
+############################# Exception handling  ##############################
 There are 2 stages where errror can happen in a program
 1. During Compilation -> Syntax Error
 2. During execution -> Exception
@@ -327,6 +207,10 @@ It is a space that holds names(identifiers). It is a dictionary of identifiers(k
 
 4 types of Namespaces:
 1. Built-in, 2. Global, 3. Enclosing, 4. Local
+
+# built-in scope
+import builtins
+print(dir(builtins))
 
 * Scope - it is a textual region in python where a Namespace is directly accessible.
 * LEGB Rule - the interpretor searches for a name from inside out, looking for local to builtin scope. If the interpretor doesn't find the name, then a NameError exception will be raised

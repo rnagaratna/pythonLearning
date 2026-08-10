@@ -1,11 +1,23 @@
-## creating dict
+################### DICTIOANRY ####################
+# 1. collection of key - value pair
+# 2. also called as maps or associative array in other languages
+
+# Characteristics
+# 1. mutable
+# 2. indexing has no meaning
+# 3. key can't be mutable datatype
+# 4. unordered
+# 5. if key is not unique, then that key will hold the latest value
 
 
 # KEY in dictionary can't be mutable datatype
 # Why should be the key a immutable datatype?? 
 # because dictionary uses hashing on keys to find out where to store the items - if the key is mutable, then the hash function for that key should also change and a new place in the memory should be alloted to all the items in the dictionary which takes a lot of time.
 
-d1 = {}
+
+#### creating dict
+
+d1 = {} # empty dictionary
 d2 = {'name':'tejas','gender':'male'} # 1D-homogeneous
 d3 = {'name':'tejas','gender':'male', (1,2,3):'okya'} #1D-heterogeneous
 
@@ -23,10 +35,18 @@ print(d4)
 
 d5 = dict([(1,2),(3,4),(5,6)])
 print(d5)
-d6 = dict(((1,2),(3,4),(5,6)))
+d6 = dict([('name','tejas'),('age',25),(3,3)])
 print(d6)
+d7 = dict(((1,2),(3,4),(5,6)))
+print(d7)
 
 # if key is not unique, then that key will hold the latest value
+d8 = {'name':'tejas','name':'rahul'}
+print(d8)
+
+# mutable items as keys
+d9 = {'name':'tejas', [1,2,3]:2} # throws error
+
 
 
 ###### Accessing the dict #######
@@ -101,13 +121,13 @@ for i in d:
 
 ########## FUNCTIONS #########
 # len and sorted
-
+d = {'name': 'tejas', 'age': 45, 'gender': 'male', 'place': 'bangalore', 'weight': 45}
 print(len(d))
 print(sorted(d)) # sorts all keys in the list
 print(sorted(d,reverse=True))
 print(min(d))
 print(max(d))
-
+ 
 print(d.items()) # gives all key value pairs within a tuple
 print(d.keys())
 print(d.values())
@@ -178,5 +198,3 @@ print(res)
 
 res = {j:{i:i*j for i in range(1,11)} for j in range(2,4)}
 print(res)
-
-

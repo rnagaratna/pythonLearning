@@ -150,8 +150,3 @@ class A:
 a = A()
 s = {a}
 print(s)
-
-
-
-
-

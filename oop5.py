@@ -6,9 +6,14 @@
 # 2. Method overloading
 # 3. Operator overloading
 
+# Method overriding
+# parent and child has the same method, in that case child's method will be called
+
+
 ### METHOD OVERLOADING  
 # class with multiple methods of the same name, but behaves differently because of the input
 # improves the readability
+
 
 class Shape:
     def area(self, radius):
@@ -52,6 +57,9 @@ print(c1.area(4,5))
 ######################## ABSTRACTION ####################
 
 # abstract class has atleast one abstract method - method which donot have any code, and should inherit from ABC class
+# abstract method - the method which does not have code , concrete method - which has code
+# abc - abstract base classes module, ABC - abstract base class
+# we cannot make an object of an abstract class
 from abc import ABC, abstractmethod
 
 class BankApp(ABC): #abstract class

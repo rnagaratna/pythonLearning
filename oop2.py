@@ -1,4 +1,17 @@
 ################################### ENCAPSULATION ####################################
+
+# Instance variable 
+# we can store different values on the same variable using different objects
+class Person:
+    def __init__(self,name_input,country_input):
+        self.name = name_input
+        self.country = country_input
+
+p1 = Person('tejas','india')
+p2 = Person('tony','US')
+print(p1.name, p2.name)
+
+
 class Atm:
 
     def __init__ (self):
@@ -69,6 +82,8 @@ class Atm:
             print("Wrong Pin")
 
         # self.menu()
+
+
 
 obj = Atm()
 

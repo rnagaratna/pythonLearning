@@ -39,9 +39,6 @@ print(type([1,2,3]))
 
 
 
-
-
-
 ##########################
 ##       OPERATORS      ##
 ##########################
@@ -79,7 +76,7 @@ print(not 0)
 
 # bitwise and operation
 print(2 & 3) 
-#answer = 2
+# answer = 2
 # 2 = 010
 # 3 = 011
 # answer = 010 = 2
@@ -112,7 +109,6 @@ print(4 << 2) # binary pattern of 4 is being shifted by 2 places towards right
 
 
 # Assignment operators
-
 a = 2
 a += 2 # a = a+2
 print(a)
@@ -121,7 +117,6 @@ print(a)
 
 # Membership operators
 # in / not in
-
 print('d' in 'delhi') # True
 print('D' in 'delhi') # False
 print('D' not in 'delhi') # True

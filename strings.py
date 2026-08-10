@@ -1,6 +1,7 @@
 # Strings - collection of character which are unicodes (not ascii)
 
-s1 = "Hello" # Creation of string
+### Creation of string
+s1 = "Hello" 
 s2 = 'Hello'
 s3 = """
 Hello
@@ -20,6 +21,7 @@ s8 = str(4)
 print(s8)
 
 
+### Accessing substrings from a string
 s9 = "Hello World"
 for i in s9:
     print(i)
@@ -43,9 +45,11 @@ print(s9[0:5])
 print(s9[2:3])
 print(s9[3:])
 print(s9[:7])
+print(s9[:])
 print(s9[2:len(s9):2])
 print(s9[6:0:-1])
 print(s9[::-1]) # reversing a string
+
 
 # slicing with negative indexing
 s9 = "Hello World"
@@ -53,6 +57,7 @@ print(s9[-5:-1])
 print(s9[-1:-7:-1])
 
 
+### Editing and deleting in strings
 s = "hello world"
 # s[0] = 'H' -----> This throws error because python strings are immutable
 # print(s)
@@ -61,11 +66,12 @@ del s
 # print(s)  ---> This throws error because s is already deleted
 
 
+### Operations on strings
 # Airthmatic operation - addition and multiplication
 print('delhi'+' bangalore')
 print('delhi ' * 5)
 
-# Relational operation
+# Relational operation (comapring strings lexiographically -> comparing based on ASCII values)
 print('delhi' == 'mumbai')
 print('delhi' == 'delhi')
 print('delhi' > 'pune')
@@ -75,7 +81,7 @@ print('D' > 'd')
 # Logical operation
 
 # Empty strings are considered as FALSE
-# is a string has characters, it is considered as TRUE
+# if a string has characters, it is considered as TRUE
 print('' and 'hello') # similar to 0 and 1, answer = 0 = ''
 print('' or 'hello') # similar to 0 or 1, answer = 1 = 'hello'
 
@@ -92,8 +98,10 @@ for i in 'hello':
     print(i)
 
 for i in 'delhi':
-    print('pune') # prints pune 5 times
+    print('delhi') # prints pune 5 times
 
+
+# Membership operation
 print('d' in 'Delhi')
 print('D' not in 'Delhi')
 
@@ -130,6 +138,7 @@ print(s.count('ej'))
 print(s.find('ej')) # gives the first position of ej
 print(s.find('x')) # gives -1 because x is not in the string
 print(s.index('e')) # gives the first position of e
+# print(s.index('x')) # throws error
 # if a char is not present in the string and if index is used it throws error unlike find which gives -1
 
 print(s.endswith('j'))
@@ -148,13 +157,12 @@ print(sen1, sen2, sen3, sen4, sep="\n")
 
 
 
-# isalnum
 print("abcd123".isalnum())
 print("abcd123%".isalnum())
 print("abcd".isalpha())
 print("abcd123".isdigit())
 print("123".isdigit())
-
+print("1name".isidentifier())
 
 
 # SPLIT and JOIN
